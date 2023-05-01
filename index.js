@@ -46,3 +46,44 @@ const footer = document.createElement('footer');
 footer.className = 'footer';
 footer.innerHTML = 'Клавиатура создана в операционной системе Windows<br>Для переключения языка комбинация: левые ctrl + alt';
 document.body.append(footer);
+
+// Отрисовка клавиатуры
+function createKeyboard() {
+    for (let i = 0; i < rowOne.length; i++) {
+        const key = document.createElement('span');
+        row1.append(key);
+        row1.classList = 'row';
+        key.className = `key ${rowOne[i][0].toLowerCase()}`;
+        key.innerHTML = rowOne[i];
+    }
+    for (let i = 0; i < rowTwo.length; i++) {
+        const key = document.createElement('span');
+        row2.append(key);
+        row2.classList = 'row';
+        key.className = `key ${rowTwo[i][0].toLowerCase().replace('key', 'key-')}`;
+        key.innerHTML = rowTwo[i];
+    }
+    for (let i = 0; i < rowThree.length; i++) {
+        const key = document.createElement('span');
+        row3.append(key);
+        row3.classList = 'row';
+        key.className = `key ${rowThree[i][0].toLowerCase().replace('key', 'key-')}`;
+        key.innerHTML = rowThree[i];
+    }
+    for (let i = 0; i < rowFour.length; i++) {
+        const key = document.createElement('span');
+        row4.append(key);
+        row4.classList = 'row';
+        key.className = `key ${rowFour[i][0].toLowerCase().replace('key', 'key-')}`;
+        key.innerHTML = rowFour[i];
+    }
+    for (let i = 0; i < rowFive.length; i++) {
+        const key = document.createElement('span');
+        row5.append(key);
+        row5.classList = 'row';
+        key.className = `key ${rowFive[i][0].toLowerCase()}`;
+        key.innerHTML = rowFive[i];
+    }
+    textarea.focus();
+}
+createKeyboard();
