@@ -42,6 +42,10 @@ const row5 = document.createElement('div');
 row1.className = 'row5';
 row4.after(row5);
 
+const row6 = document.createElement('div');
+row1.className = 'row6';
+row5.after(row6);
+
 const footer = document.createElement('footer');
 footer.className = 'footer';
 footer.innerHTML = 'Клавиатура создана в операционной системе Windows<br>Для переключения языка комбинация: левые ctrl + alt';
@@ -83,6 +87,13 @@ function createKeyboard() {
         row5.classList = 'row';
         key.className = `key ${rowFive[i][0].toLowerCase()}`;
         key.innerHTML = rowFive[i];
+    }
+    for (let i = 0; i < rowSix.length; i++) {
+        const key = document.createElement('span');
+        row6.append(key);
+        row6.classList = 'row';
+        key.className = `key ${rowSix[i][0].toLowerCase()}`;
+        key.innerHTML = rowSix[i];
     }
     textarea.focus();
 }
